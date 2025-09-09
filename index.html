@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discord.gg/ay1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* الخلفية سوداء */
+            font-family: 'Courier New', Courier, monospace;
+            color: #ff0000; /* اللون الأحمر */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        .image-container img {
+            width: 750px; 
+            height: auto;
+            border: 2px solid #ff0000; /* حدود الصورة باللون الأحمر */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.9); /* ظل أقوى حول الصورة */
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 2em; /* زيادة حجم النص */
+            color: #ff0000; 
+            text-shadow: 0px 0px 15px #ff0000, 0px 0px 30px #ff0000, 0px 0px 50px #ff0000; 
+            letter-spacing: 6px; /* زيادة المسافة بين الحروف */
+            white-space: pre-wrap;
+        }
+        .text {
+            margin-top: 30px;
+            font-size: 4em; /* زيادة حجم النص */
+            color: #ff0000; 
+            text-shadow: 0px 0px 15px #ff0000, 0px 0px 30px #ff0000, 0px 0px 50px #ff0000; 
+            letter-spacing: 6px; /* زيادة المسافة بين الحروف */
+        }
+        .text span {
+            font-size: 5em;
+            color: #ff0000;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 30px #ff0000, 0px 0px 50px #ff0000, 0px 0px 100px #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://i.imgur.com/qEfYjQd.png" alt="Discord Image"> <!-- رابط الصورة الجديد -->
+    </div>
+    <audio autoplay loop>
+        <source src="حط الاغنيه الي تبيها" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="info" id="ip-info">
+        <strong>IP: <span id="ip"></span></strong><br>
+        <span><strong>City:</strong> <span id="city"></span></span><br>
+        <span><strong>Region:</strong> <span id="region"></span></span><br>
+        <span><strong>Country:</strong> <span id="country"></span></span><br>
+        <span><strong>Location:</strong> <span id="loc"></span></span><br>
+        <span><strong>Organization:</strong> <span id="org"></span></span><br>
+        <span><strong>Timezone:</strong> <span id="timezone"></span></span>
+    </div>
+    <div class="text">
+        <span>discord.gg/ay1</span> <!-- النص الجديد -->
+    </div>
+    <div class="text">
+        <span>msh fuck your server</span> <!-- النص الجديد -->
+    </div>
+    
+    <script>
+        fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            delete data.readme;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.textContent = JSON.stringify(data, null, 2);
+        });
+    </script>
+</body>
+</html>
